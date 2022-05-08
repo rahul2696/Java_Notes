@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <br><br>
+            <h2 class="display-3">Registration Form</h2>
+            <hr>
+            <form name="regform" action="Register.jsp" method="post">
+                <table>
+                    <tr>
+                        <td>UserID</td>
+                        <td><input type="text" name="uid" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="psw" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td><input type="text" name="unm" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <input type="radio" name="gen" value="f" checked> Female
+                            <input type="radio" name="gen" value="m"> Male
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>
+                            <select name="ct" class="form-control">
+                                <option value="mum">Mumbai</option>
+                                <option value="lon" selected>London</option>
+                                <option value="kar">Karachi</option>
+                                <option value="ber">Berlin</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td><input type="color" name="c" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td><input type="date" name="d" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit" class="btn btn-info btn-lg"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+function createRequestObject() {
+    var tmpXmlHttpObject;
+    if (window.XMLHttpRequest) {
+            tmpXmlHttpObject = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    return tmpXmlHttpObject;
+}
+
+
+var http = createRequestObject();
+
+function makeGetRequest() {
+    id=document.frm.uid.value;
+    http.open('get', 'Available.jsp?uid=' + id);
+    http.onreadystatechange = processResponse;
+    http.send(null);
+}
+
+function processResponse() {
+    if(http.readyState == 4){
+        var response = http.responseText;
+        document.getElementById('stat').innerHTML = response;
+    }
+}
+
+
+
+
+</script>
+
+
+</head>
+<body>
+<div class="container">
+<br><br>
+<h2 class="display-4">Registration Form</h2>
+<hr>
+<form name="frm" method="post" action="Register">
+<table>
+<tr>
+<td>UserID
+<td><input type="text" name="uid" class="form-control" autocomplete="off" required>
+<td width="20px">
+<td><div id="stat"></div>
+</tr>
+
+<tr>
+<td>Password
+<td><input type="password" name="psw" class="form-control" required onfocus="makeGetRequest()">
+</tr>
+
+<tr>
+<td>UserName
+<td><input type="text" name="unm" class="form-control" required>
+</tr>
+
+<tr>
+<td>City
+<td><input type="text" name="city" class="form-control" required>
+</tr>
+
+<tr>
+<td>Mobile
+<td><input type="text" name="mob" class="form-control" required>
+</tr>
+
+<tr>
+<td>EmailID
+<td><input type="email" name="eml" class="form-control" required>
+</tr>
+
+<tr>
+<td><input type="submit" value="Register" class="btn btn-secondary">
+<td>
+</tr>
+
+</table>
+
+</form>
+
+
+</div>
+</body>
+</html>

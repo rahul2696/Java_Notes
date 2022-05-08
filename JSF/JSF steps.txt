@@ -1,0 +1,47 @@
+Steps of JSF application in Eclipse
+------------------------------------------
+1. Create a Dynamic web project
+2. Select JSF configurations from the list
+3. Generate web.xml
+4. Select Disable library configuration option
+5. Download necessary jar files from github
+6. Add jar files to the project
+7. Open web.xml and make 2 changes
+	a. Add index.xhtml in the welcome file list
+	b. change <url-pattern> to *.xhtml
+8. Create index.xhtml as default home page of the project
+	a. Right click webapp->New->HTML File
+	b. Specify file name as index.xhtml
+	c. Next
+	d. Select New XHTML file (1.0 Strict)
+9. Add 2 entries in the html tag of xhtml page
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+
+10. Create a form or hyperlink using JSF tag library
+	a. Specify name of the next facelet in action of button
+	b. Leave value attribute of text box blank at this time
+
+11. Create a facelet to deliver output
+	b. Leave value attribute of label blank at this time
+
+12. Right click src and create a package to store managed beans
+
+13. Right click package->New->class to create a bean for processing
+	a. Create properties for input/output controls
+	b. Create constructor to initialize properties
+	c. Generate Setters/Getters for the properties
+	d. Write a processing function and call it in setter
+
+14. Add 2 Annotations to bean class
+	@ManagedBean(name="xyz")
+	@RequestScoped or @SessionScoped
+
+
+15. Associate bean properties with the input/output controls on created facelets
+#{acc.accnm}
+
+16. Run the application
+	
+
+

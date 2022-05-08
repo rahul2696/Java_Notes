@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>hyperlink ajax</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+function createRequestObject() {
+    var tmpXmlHttpObject;
+    if (window.XMLHttpRequest) {
+            tmpXmlHttpObject = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    return tmpXmlHttpObject;
+}
+
+
+var http = createRequestObject();
+
+function makeGetRequest(ty) {
+    http.open('get', 'ShowTypeReport.jsp?typ=' + ty);
+    http.onreadystatechange = processResponse;
+    http.send(null);
+}
+
+function sendRequest(co,mo) {
+    http.open('get', 'ShowCompInfo.jsp?comp=' + co +'&mod='+mo);
+    http.onreadystatechange = processResponse;
+    http.send(null);
+}
+
+function processResponse() {
+    if(http.readyState == 4){
+        var response = http.responseText;
+        document.getElementById('repo').innerHTML = response;
+    }
+}
+
+
+
+</script>
+</head>
+<body>
+<div class="container">
+    <br><br>
+    <h2 class="display-5">Hyperlink AJAX</h2>
+    <hr>
+    <a href="javascript:makeGetRequest('saving')">Saving</a> | 
+    <a href="javascript:makeGetRequest('current')">Current</a> | 
+    <a href="javascript:makeGetRequest('fixed')">Fixed</a>
+    <br>
+    <a href="javascript:sendRequest('microsoft','cloud')">Microsoft</a> | 
+    <a href="javascript:sendRequest('volkswagen','tiguan')">Volkswagen</a> | 
+    <a href="javascript:sendRequest('apple','iphone')">Apple</a> | 
+    <a href="javascript:sendRequest('visa','card')">Visa</a>  
+
+    <div id="repo"></div>
+</div>
+</body>
+</html>

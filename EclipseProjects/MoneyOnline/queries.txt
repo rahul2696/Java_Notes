@@ -1,0 +1,15 @@
+create table users
+(
+userid varchar(20) primary key,
+pswd varchar(30),
+usernm varchar(50),
+usertype varchar(10) default 'customer',
+userstatus varchar(10) default 'active',
+city varchar(20),
+mobile varchar(15),
+emailid varchar(50)
+);
+
+
+insert into users values('soham','liverpool','soham global',
+'admin',default,'mumbai','7391966656','sohamtraining@outlook.com');

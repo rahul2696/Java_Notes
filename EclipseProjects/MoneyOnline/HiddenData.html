@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hidden</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <br><br>
+    <h2>Hidden form objects</h2>
+    <hr>
+    <form action="ShowHiddenData.jsp" method="post">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="unm" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city" class="form-control"></td>
+            </tr>
+            <input type="hidden" name="code" value="PM786">
+            <tr>
+                <td><input type="submit" value="Submit" class="form-control"></td>
+                <td></td>
+            </tr>
+        </table>
+
+
+    </form>
+
+</div>
+</body>
+</html>

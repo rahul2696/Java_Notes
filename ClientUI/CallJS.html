@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script language="javascript" src="scripts.js">
+            
+        </script>
+        <style>
+            .sp
+            {
+                font-family: tahoma;
+                color: darkgreen;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body onload="showdt()">
+        <div class="container">
+            <br><br>
+                <h2 class="display-4">Customer Billing</h2>
+                <span id="dtm" class="sp"></span>
+                <hr>
+
+                <form name="cust">
+                    <table>
+                        <tr>
+                            <td>Customer Name</td>
+                            <td><input type="text" name="cnm" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>Purchase Amount</td>
+                            <td><input type="text" name="pamt" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="Show Bill" onclick="calcBill()" class="form-control"></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </form>
+            <br>
+            <div id="bill"></div>
+            
+        </div>
+
+        
+    </body>
+</html>

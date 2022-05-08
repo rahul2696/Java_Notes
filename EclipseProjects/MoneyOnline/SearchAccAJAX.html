@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Search</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+function createRequestObject() {
+    var tmpXmlHttpObject;
+    if (window.XMLHttpRequest) {
+            tmpXmlHttpObject = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    return tmpXmlHttpObject;
+}
+
+
+var http = createRequestObject();
+
+function makeGetRequest() {
+    no=document.frm.ano.value;
+    http.open('get', 'Search.jsp?ano=' + no);
+    http.onreadystatechange = processResponse;
+    http.send(null);
+}
+
+function processResponse() {
+    if(http.readyState == 4){
+        var response = http.responseText;
+        document.getElementById('res').innerHTML = response;
+    }
+}
+
+
+</script>
+
+</head>
+<body>
+    <div class="container">
+        <br><br>
+        <h2 class="display-4">Search Account</h2>
+        <hr>
+        <form name="frm">
+            Account Number <input type="text" name="ano" autocomplete="off">
+            <input type="button" value="Search" onclick="makeGetRequest()">
+        </form>
+
+<br>
+<div id="res">
+<ul>
+<li>Data to the server will be sent thru a JavaScript function
+<li>Server returns response back to JavaScript
+<li>JavaScript function will display servers response in the div
+<li>Existing page contents will not be removed or disturbed
+</ul>
+</div>
+
+<br>
+<img src="images/giphy.gif">
+
+    </div>
+
+</body>
+</html>

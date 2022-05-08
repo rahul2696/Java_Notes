@@ -1,0 +1,22 @@
+Steps of JDBC-
+
+1] download and install Java (latest/LTS)
+2] configure a cloud database or download/install a local database 
+3] download and configure JDBC Driver (set CLASSPATH of the jar file)
+.;F:\mysql-connector-java-8.0.28.jar
+------------
+4] import java.sql package
+5] Create objects of required JDBC classes like Connection, Statement, ResultSet, etc.
+6] Load the JDBC driver ex. com.mysql.cj.jdbc.Driver
+7] initialize connection object to establish connection with the DB using connection URL or connection string
+jdbc:mysql://servername:port/databasename?user=yourusernm&password=yourpassword
+jdbc:mysql://localhost:3306/banktransdb?user=root&password=volkswagen
+8] initialize Statement object with the help of Connection object
+9] Execute the necessary queries from the program using Statement object
+select query - executeQuery() returns ResultSet
+insert, update, delete - executeUpdate() returns int
+create, alter, drop - execute() return boolean
+10] if the executed query is select, store the result in ResultSet and display/use
+11] Close the connection at the end
+12] JDBC activities are performed in runtime so Exception Handling is compulsory
+

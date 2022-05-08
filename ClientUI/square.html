@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script language="javascript">
+            function calcSquare()
+            {
+                n=document.frm.num.value
+                sq=n*n
+                //document.write("square is "+sq)
+                //alert("Square is "+sq)
+                document.getElementById("res").innerHTML="Square is "+sq
+                document.getElementById("res").style.color="blue"
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <br><br>
+            <h2 class="display-4">Testing JavaScript</h2>
+            <hr>
+            <form name="frm">
+                <table>
+                    <tr>
+                        <td>Number</td>
+                        <td><input type="text" name="num" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="Show Square" class="btn btn-info" onclick="calcSquare()"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+            <br>
+            <div id="res">
+                Thanks for joining SohamGlobal.
+                <br>
+                <img src="pl.gif">
+            </div>
+
+        </div>
+    </body>
+</html>

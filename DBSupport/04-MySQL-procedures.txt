@@ -1,0 +1,133 @@
+********** STORED PROCEDURES ******************
+
+ON COMMAND LINE
+---------------
+
+MYSQL> DELIMITER //
+mYSQL> CREATE PROCEDURE GetAllProducts()
+   BEGIN
+   SELECT *  FROM products;
+   END//
+
+MYSQL> DELIMITER ;
+
+
+---------------------
+
+DELIMITER //
+
+CREATE PROCEDURE updbal()
+BEGIN
+
+update accounts set balance=balance+(balance*3/100)
+where acctype='saving';
+
+update accounts set balance=balance+(balance*7/100)
+where acctype='fixed';
+
+update accounts set balance=balance+(balance*4/100)
+where acctype='current';
+
+END//
+
+DELIMITER ;
+
+---
+mysql> call updbal;
+
+-----------------
+
+DELIMITER //
+
+CREATE PROCEDURE newacc(ano int,anm varchar(30),atyp varchar(10),bal float)
+BEGIN
+
+insert into accounts values(ano,anm,atyp,bal);
+
+END//
+
+DELIMITER ;
+
+---
+call newacc(1007,'george baily','saving',36500);
+
+----------------------
+
+delimiter //
+
+create procedure addbonus(ano int,amt float)
+begin
+update accounts set balance=balance+amt
+where accno=ano;
+end//
+
+delimiter ;
+
+---
+mysql>call addbonus(1001,500);
+
+----------------------------
+Procedure that transfers amount from one account to another
+
+DELIMITER //
+
+CREATE PROCEDURE trans1 (sacc int,dacc int,amt float)
+BEGIN
+
+declare tot float;
+select balance-amt into tot from accounts where accno=sacc;
+
+if tot>=0 then
+update accounts set balance=balance-amt where accno=sacc;
+update accounts set balance=balance+amt where accno=dacc;
+end if;
+
+
+END//
+
+DELIMITER ;
+
+
+call trans(1017,1013,5500);
+----------------------------
+
+mysql> delimiter //
+mysql> create procedure addacc(no int,nm varchar(30),typ varchar(20),bal float)
+    -> begin
+    -> insert into accounts values(no,nm,typ,bal);
+    -> end//
+Query OK, 0 rows affected (0.65 sec)
+
+mysql> delimiter ;
+mysql> call addacc(1004,'shailaja','current',21800);
+
+----------------------
+
+mysql> delimiter //
+mysql> create procedure trans(no int,typ varchar(10),amt float)
+    -> begin
+    -> if typ='deposit' then
+    -> update accounts set balance=balance+amt where accno=no;
+    -> else
+    -> update accounts set balance=balance-amt where accno=no;
+    -> end if;
+    -> end//
+Query OK, 0 rows affected (0.26 sec)
+
+mysql> delimiter ;
+mysql> call trans(1002,'deposit',5300);
+---------------
+mysql> delimiter //
+mysql> create procedure getname(no int)
+    -> begin
+    -> select stnm from students
+    -> where rollno=no;
+    -> end//
+Query OK, 0 rows affected (0.48 sec)
+
+mysql> delimiter ;
+mysql> call getname(102);
+
+
+
+

@@ -1,0 +1,71 @@
+*********** JOINS **************
+
+create table products(prodid varchar(5) primary key,prodnm varchar(50),company varchar(20),price float);
+
+insert into products values('sp841','Superb','Skoda',2854600.00);
+insert into products values('ms488','Surface Pro','microsoft',129399.00);
+insert into products values('ip627','iphone 8','apple',64100.00);
+insert into products values('hp419','development laptop','HP',54600.00);
+insert into products values('ph618','washing machine','philips',23200.00);
+insert into products values('lt532','Smart FHD TV','samsung',36500.00);
+insert into products values('vn488','Vento','Volkswagen',1325000.00);
+insert into products values('x1562','X1 Suv','BMW',3469100.00);
+insert into products values('tg765','Tiguan','Volkswagen',2914900.00);
+insert into products values('gt261','6 Series GT','BMW',6323200.00);
+
+
+select * from products;
+
+create table customers(custno int primary key,custnm varchar(30),prodid varchar(5),paymode varchar(30) default 'credit card');
+
+insert into customers(custno,custnm,prodid,paymode) values (12,'Joe Root','hp419','netbanking');
+insert into customers(custno,custnm,prodid,paymode) values (13,'Boris Becker','tg765','cod');
+insert into customers(custno,custnm,prodid) values (17,'Michael Schumacher','lt532');
+insert into customers(custno,custnm,prodid) values (23,'Arnold Schwarzenegger','hp419');
+insert into customers(custno,custnm,prodid) values (26,'Jos Buttler','lt532');
+insert into customers(custno,custnm,prodid,paymode) values (32,'Rebecca Ferguson','ip627','netbanking');
+insert into customers(custno,custnm,prodid,paymode) values (37,'Bill Gates','ms488','debit card');
+insert into customers(custno,custnm,prodid) values (41,'Mohamed Salah','sg375');
+insert into customers(custno,custnm,prodid) values (53,'Ferdinand Porsche','tg765');
+insert into customers(custno,custnm,prodid,paymode) values (58,'Tom Cruise','ss210','cod');
+insert into customers(custno,custnm,prodid) values (67,'Roger Federer','gt261');
+insert into customers(custno,custnm,prodid) values (74,'Chris Woakes','dm298');
+
+
+select * from customers;
+
+select customers.custnm,products.prodnm,products.company,products.price
+from customers
+inner join
+products on customers.prodid=products.prodid;
+
+
+select customers.custnm,products.prodnm,products.company,products.price
+from customers
+left outer join
+products on customers.prodid=products.prodid;
+
+
+
+select customers.custnm,products.prodnm,products.company,products.price
+from customers
+right outer join
+products on customers.prodid=products.prodid;
+
+
+select customers.custnm,products.prodnm,products.company,products.price
+from customers
+full outer join
+products on customers.prodid=products.prodid;
+
+
+select * from customers cross join products;
+
+
+select c1.custnm,c2.custnm from customers c1
+inner join customers c2
+on c1.prodid=c2.prodid;
+
+
+
+

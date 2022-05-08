@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <script language="javascript">
+            function validate()
+            {
+                m=document.frm.mob.value
+                if(m.length!=10)
+                {
+                    alert("Invalid mobile number")
+                    return false
+                }
+                else
+                return true
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <br><br>
+            <h2>Registration Form</h2>
+            <hr>
+            <form name="frm" action="UserReg.jsp" method="post" onsubmit="return validate()">
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="unm"></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile</td>
+                        <td><input type="text" name="mob"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        
+    </body>
+</html>

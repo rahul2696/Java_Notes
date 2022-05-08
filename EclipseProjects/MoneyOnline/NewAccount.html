@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>New Account</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <br><br>
+        <h2 class="display-4">New Account Form</h2>
+        <hr>
+        <form action="AddAccount.jsp" method="post">
+            <table>
+                <tr>
+                    <td>Account Number </td>
+                    <td><input type="text" name="ano" class="form-control" required autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="anm" class="form-control" required autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <select name="atyp" class="form-control">
+                            <option value="saving">Saving</option>
+                            <option value="fixed">Fixed</option>
+                            <option value="current">Current</option>
+                            <option value="ppf">PPF</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Balance</td>
+                    <td><input type="text" name="bal"  class="form-control" required autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit" class="btn btn-secondary"></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+</body>
+</html>

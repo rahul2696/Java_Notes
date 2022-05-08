@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>choice</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <br><br>
+    <h2 class="display-4">User Preference</h2>
+    <hr>
+    <p>This program will take users preference and will send it 
+        to the server. Server will store this data in a cookie which
+        will be permanently stored on the clients browser.
+    </p>
+
+    <form action="StoreCookies.jsp" method="post">
+        <table>
+            <tr>
+                <td>Choice</td>
+                <td>
+                    <select name="choice" class="form-control">
+                        <option value="news">News</option>
+                        <option value="movies">Movies</option>
+                        <option value="music">Music</option>
+                        <option value="sports">Sports</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" value="Submit" class="form-control">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+<br>
+<a href="index.jsp">Home</a>
+</div>
+</body>
+</html>

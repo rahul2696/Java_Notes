@@ -1,0 +1,23 @@
+Server name / Host
+bwxkjmcph5prgjl2hloh-mysql.services.clever-cloud.com
+
+Database name
+bwxkjmcph5prgjl2hloh
+
+User
+uzb2eo26hzxl6jpj
+
+password
+8Dxb50kXEJsGfgACPcGF
+
+port
+3306
+
+"jdbc:mysql://bwxkjmcph5prgjl2hloh-mysql.services.clever-cloud.com:3306/bwxkjmcph5prgjl2hloh?user=uzb2eo26hzxl6jpj&password=8Dxb50kXEJsGfgACPcGF"
+
+
+"jdbc:mysql://localhost:3306/banktransdb?user=root&password=volkswagen"
+
+
+CLI
+mysql -h bwxkjmcph5prgjl2hloh-mysql.services.clever-cloud.com -P 3306 -u uzb2eo26hzxl6jpj -p bwxkjmcph5prgjl2hloh

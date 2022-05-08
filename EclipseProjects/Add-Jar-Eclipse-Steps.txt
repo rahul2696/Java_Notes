@@ -1,0 +1,21 @@
+To add JDBC driver jar file to eclipse project
+-----------------------------------------------
+right click the project name
+go to Build Path option
+click Configure Build Path
+select Libraries tab
+select Classpath option
+click Add External JARs button
+Select the jar file from Libraries directory of Eclipse (which we created)
+click open button
+the jar file is added to the list of classpath
+click Apply button
+---
+select Deployment Assembly option from the left side list
+cilck Add button
+select Java Build Path Entries from the list
+click Next
+Select the jar filename
+click Finish button
+click Apply and Close
+

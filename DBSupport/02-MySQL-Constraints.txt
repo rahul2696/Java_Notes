@@ -1,0 +1,52 @@
+********** CONSTRAINTS ***************
+
+drop table accounts;
+
+create table emp
+(
+empno int primary key,
+empnm varchar(30),
+dept varchar(15) not null,
+mobile varchar(10) unique,
+qualification varchar(10) default 'mumbai',
+age int check(age>=18),
+salary float
+);
+
+
+Create table accounts 
+(
+accno int primary key,
+accnm varchar(30) unique,
+acctype varchar(10) not null,
+city varchar(50) default 'amravati',
+balance float check (balance>=500)
+);
+
+create table customers 
+(
+custno int primary key auto_increment,
+custnm varchar(30),
+mobile varchar(15)
+);
+
+create table CountryMaster
+(
+CountryID int primary key,
+CountryName varchar(100)
+);
+
+create table StateMaster(
+StateID int primary key,
+CountryID int,statename varchar(100),
+FOREIGN KEY(CountryID)REFERENCES CountryMaster(CountryID)
+);
+
+
+create table LocationMaster
+(
+LocationID int primary key,
+StateID int,LocationName varchar(1000),
+IsSubLocation bit, 
+FOREIGN KEY(StateID) REFERENCES StateMaster(StateID)
+);
